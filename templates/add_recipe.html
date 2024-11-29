@@ -1,0 +1,15 @@
+<form action="/add_recipe" method="POST">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="ingredients">Ingredients (comma-separated):</label><br>
+    <textarea id="ingredients" name="ingredients" required></textarea><br><br>
+
+    <label for="preferences">Dietary Preferences:</label><br>
+    <input type="text" id="preferences" name="preferences" placeholder="e.g., vegetarian, vegan" required><br><br>
+
+    <label for="calories">Calories:</label><br>
+    <input type="number" id="calories" name="calories" required><br><br>
+
+    <button type="submit">Submit Recipe</button>
+</form>

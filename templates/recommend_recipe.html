@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Recommendations</title>
+</head>
+<body>
+    <h1>Recipe Recommendations</h1>
+    <form action="/recommend_recipe" method="GET">
+        <label for="preferences">Dietary Preferences:</label><br>
+        <input type="text" id="preferences" name="preferences" placeholder="e.g., vegetarian, vegan"><br><br>
+
+        <label for="calories">Maximum Calories:</label><br>
+        <input type="number" id="calories" name="calories" placeholder="e.g., 300"><br><br>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    {% if recipes %}
+        <h2>Recommended Recipes:</h2>
+        <ul>
+        {% for recipe in recipes %}
+            <li>
+                <strong>{{ recipe[0] }}</strong><br>
+                Ingredients: {{ recipe[1] }}<br>
+                Calories: {{ recipe[2] }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recipes found matching your preferences.</p>
+    {% endif %}
+</body>
+</html>
